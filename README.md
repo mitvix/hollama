@@ -6,7 +6,8 @@ Github: https://github.com/fmaclen/hollama
 
 This script just makes start and stop more easier
 
-To use
+## To use
+
 ```
 git clone https://github.com/mitvix/hollama
 cd hollama
@@ -14,7 +15,7 @@ chmod +x hollama
 sudo cp hollama /usr/local/bin
 ```
 
-Some Options
+## Some Options
 
 hollama option
 
