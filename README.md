@@ -16,11 +16,11 @@ sudo cp hollama /usr/local/bin
 
 Some Options
 
->> hollama <option>
+hollama <option>
 
---install    Install container ghcr.io/fmaclen/hollama:latest at 4173/tcp"
---start      Load Hollama container installed"
---stop       Just Docker stop hollama"
---list       Just list docker containers with docker ps"
---open       Try open local site http://localhost:4173 using xdg-open"
---remove     Delete container" 
+* --install    Install container ghcr.io/fmaclen/hollama:latest at 4173/tcp"
+* --start      Load Hollama container installed"
+* --stop       Just Docker stop hollama"
+* --list       Just list docker containers with docker ps"
+* --open       Try open local site http://localhost:4173 using xdg-open"
+* --remove     Delete container" 
