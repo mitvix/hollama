@@ -1,0 +1,49 @@
+#!/bin/bash
+# Just a script to work with Hollama
+# Hollama is a minimal LLM chat app that runs entirely in your browser
+# Github: https://github.com/fmaclen/hollama
+# This script just makes it easier
+
+function tryopen() {    
+    echo "Trying to open http://localhost:4173..."
+    for i in {0..3}; do
+        sleep 1;
+        echo -n "."
+    done
+    if command -v xdg-open >/dev/null 2>&1; then        
+        xdg-open http://localhost:4173
+    else 
+        echo "Now open http://localhost:4173 from your Web Browser"
+    fi
+}
+
+arg=$1
+if [[ $arg == "--install"  || $arg == "install" ]]; then
+    docker run --rm -d -p 4173:4173 --name hollama ghcr.io/fmaclen/hollama:latest     
+    if [ $? -eq 0 ]; then        
+        tryopen
+    fi
+elif [[ $arg == "--start" || $arg == "start" ]]; then
+    docker start hollama
+    if [ $? -eq 0 ]; then        
+        tryopen
+    fi
+elif [[ $arg == "--stop" || $arg == "stop" ]]; then
+    docker stop hollama    
+elif [[ $arg == "--list" || $arg == "list" ]]; then
+    docker ps
+elif [[ $arg == "--open" || $arg == "open" ]]; then
+    tryopen
+elif [[ $arg == "--remove" || $arg == "remove" ]]; then
+    docker rm hollama
+else 
+    echo "Usage "
+    echo "$0 --install    Install container ghcr.io/fmaclen/hollama:latest at 4173/tcp"
+    echo "$0 --start        Load Hollama container installed"
+    echo "$0 --stop       Just Docker stop hollama"
+    echo "$0 --list       Just list docker containers with docker ps"
+    echo "$0 --open       Try open local site http://localhost:4173 using xdg-open"
+    echo "$0 --remove     Delete container" 
+    echo ""
+    docker ps  
+fi
