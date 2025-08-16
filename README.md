@@ -25,4 +25,4 @@ hollama option
 * --stop,       Just Docker stop hollama
 * --list,       Just list docker containers with docker ps
 * --open,       Try open local site http://localhost:4173 using xdg-open
-* --remove,     Delete container
+* --remove,     Delete container [ the stop already does the job ] 
