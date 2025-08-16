@@ -16,7 +16,7 @@ sudo cp hollama /usr/local/bin
 
 Some Options
 
-hollama <option>
+hollama option
 
 * --install    Install container ghcr.io/fmaclen/hollama:latest at 4173/tcp"
 * --start      Load Hollama container installed"
