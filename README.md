@@ -1,5 +1,5 @@
 
-<summary>Just a script in shell to work with Hollama </summary>
+#Just a script in shell to work with Hollama
 
 Hollama is a minimal LLM chat app that runs entirely in your browser
 
